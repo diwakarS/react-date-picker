@@ -51,8 +51,13 @@ export default class DatePicker extends PureComponent {
   }
 
   onOutsideAction = (event) => {
-    if (this.wrapper && !this.wrapper.contains(event.target)) {
-      this.closeCalendar();
+    if (
+      this.wrapper &&
+      !this.wrapper.contains(event.target) &&
+      !event.target.className.indexOf('react-calendar') // fix for safari calendar bug
+    ) {
+      this.closeCalendar()
+      event.stopPropagation()
     }
   }
 
