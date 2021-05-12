@@ -6,7 +6,7 @@
   "source": "src/entry.js",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "yarn build-js && yarn copy-styles && yarn build-styles && yarn copy-types",
+    "build": "npm run build-js && npm run copy-styles && npm run build-styles && npm run copy-types",
     "build-js": "babel src -d dist --ignore \"**/*.spec.js,**/*.spec.jsx\"",
     "build-styles": "lessc ./dist/DatePicker.less ./dist/DatePicker.css",
     "clean": "rimraf dist",
@@ -15,8 +15,8 @@
     "jest": "jest",
     "jest-coverage": "jest --coverage",
     "lint": "eslint sample/ src/ test/ --ext .jsx,.js",
-    "prepack": "yarn clean && yarn build",
-    "test": "yarn lint && yarn jest"
+    "prepack": "npm run clean && npm run build",
+    "test": "npm run lint && npm run jest"
   },
   "jest": {
     "setupFiles": [
